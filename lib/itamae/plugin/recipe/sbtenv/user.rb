@@ -1,22 +1,22 @@
 node.reverse_merge!(
-  scalaenv: {
+  sbtenv: {
     scheme:   'git',
     user:     ENV['USER'],
     versions: [],
   },
-  :'scala-build' => {
+  :'sbt-build' => {
     build_envs: [],
   }
 )
 
-unless node[:scalaenv][:scalaenv_root]
+unless node[:sbtenv][:sbtenv_root]
   case node[:platform]
   when 'osx', 'darwin'
     user_dir = '/Users'
   else
     user_dir = '/home'
   end
-  node[:scalaenv][:scalaenv_root] = File.join(user_dir, node[:scalaenv][:user], '.scalaenv')
+  node[:sbtenv][:sbtenv_root] = File.join(user_dir, node[:sbtenv][:user], '.sbtenv')
 end
 
-include_recipe 'scalaenv::install'
+include_recipe 'sbtenv::install'

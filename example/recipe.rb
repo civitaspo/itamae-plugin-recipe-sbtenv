@@ -1,1 +1,1 @@
-include_recipe "scalaenv::user"
+include_recipe "sbtenv::user"

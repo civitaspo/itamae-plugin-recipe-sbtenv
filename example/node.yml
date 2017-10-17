@@ -1,6 +1,6 @@
-scalaenv:
+sbtenv:
   user: vagrant
-  global: scala-2.12.2
+  global: sbt-0.13.15
   versions:
-    - scala-2.11.8
-    - scala-2.10.6
+    - sbt-0.13.15
+    - sbt-0.12.4
